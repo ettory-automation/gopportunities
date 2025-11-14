@@ -1,1 +1,22 @@
+# asdf config file
+
 .tool-versions
+
+# Binaries
+
+*.exe
+*. dll
+*.so
+*.dylib
+
+# Test Binaries
+
+*.test
+
+# Coverage
+
+*.out
+
+DB folder
+
+db/
