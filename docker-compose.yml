@@ -1,5 +1,6 @@
 services:
   gopportunities:
+    build: .
     image: gopportunities:v1.0.0
     container_name: gopportunities
     volumes:
