@@ -7,6 +7,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateOpeningHandler godoc
+// @Summary Create a new job opening
+// @Description Creates a new job opening record in the database
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param request body CreateOpeningRequest true "Opening data"
+// @Success 200 {object} CreateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [post]
 func CreateOpeningHandler(c *gin.Context) {
 	request := CreateOpeningRequest{}
 

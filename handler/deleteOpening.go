@@ -8,6 +8,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// DeleteOpeningHandler godoc
+// @Summary Delete a new job opening
+// @Description Deletes an existing job opening from the database
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query int true "Opening identification"
+// @Success 200 {object} DeleteOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opening [delete]
 func DeleteOpeningHandler(c *gin.Context) {
 	id := c.Query("id")
 	if id == "" {

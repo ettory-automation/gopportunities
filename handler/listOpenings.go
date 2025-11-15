@@ -7,6 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// ListOpeningsHandler godoc
+// @Summary List all job openings
+// @Description List all job openings from the database
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Success 200 {object} ListOpeningsResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /openings [get]
 func ListOpeningsHandler(c *gin.Context) {
 	openings := []schemas.Opening{}
 

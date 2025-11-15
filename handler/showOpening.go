@@ -7,6 +7,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// ShowOpeningHandler godoc
+// @Summary Show a job opening
+// @Description Show an existing job opening from the database
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query int true "Opening identification"
+// @Success 200 {object} ShowOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opening [get]
 func ShowOpeningHandler(c *gin.Context) {
 	id := c.Query("id")
 	if id == "" {
