@@ -1,0 +1,3 @@
+:9052 {
+	reverse_proxy gopportunities:8080
+}

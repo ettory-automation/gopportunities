@@ -1,0 +1,36 @@
+services:
+  gopportunities:
+    image: gopportunities:v1.0.0
+    container_name: gopportunities
+    volumes:
+      - gopportunities_data:/app/db
+    restart: unless-stopped
+    expose:
+      - "8080"
+    networks:
+      - gopportunities_net
+  
+  caddy:
+    image: caddy:2.10.2-alpine
+    container_name: caddy_gopportunities
+    ports:
+      - "9052:9052"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - gopportunities
+    networks:
+      - gopportunities_net
+
+networks:
+  gopportunities_net:
+    driver: bridge
+
+volumes:
+  gopportunities_data:
+  caddy_config:
+  caddy_data:
