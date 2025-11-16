@@ -33,5 +33,5 @@ func initializeRoutes(router *gin.Engine) {
 		v1.GET("/openings", handler.ListOpeningsHandler)
 	}
 	// Initialize Swagger
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler)) // Correção: r para router
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }
